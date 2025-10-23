@@ -1,14 +1,6 @@
 #!/bin/bash
 
-if [[ "$1" == "--fast" ]];
-then
-
-echo "fast mode"
-
-docker build -t e87870823/verteilen_node -f ./deploy_fast.Dockerfile . --progress=plain
-read -p "Press enter to continue"
-
-elif [[ "$1" == "--publish" ]];
+if [[ "$1" == "--publish" ]];
 then
 
 echo "publish mode"
@@ -19,7 +11,7 @@ docker push ghcr.io/verteilen/verteilen_node:${version}
 
 else
 
-echo "full mode"
+echo "build mode"
 
 docker build -t e87870823/verteilen_node -f ./deploy.Dockerfile . --progress=plain
 read -p "Press enter to continue"
