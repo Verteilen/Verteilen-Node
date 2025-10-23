@@ -1,12 +1,3 @@
-FROM node:22-slim AS builder
-WORKDIR /app/
-
-COPY . .
-
-RUN npm install -g bun
-RUN bun install
-RUN bun run build:node
-
 FROM ubuntu:noble
 
 RUN apt update
@@ -15,8 +6,10 @@ RUN apt -y install npm nodejs
 WORKDIR /app/
 EXPOSE 12080
 
-COPY --from=builder /app/build/node /app/
-RUN npm install -g bun
-RUN bun install
+COPY . .
 
-CMD node .
+RUN npm install -g typescript
+RUN npm install
+RUN tsc
+
+ENTRYPOINT ["node", "."]

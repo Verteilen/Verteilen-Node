@@ -4,14 +4,16 @@
   "license": "MIT",
   "homepage": "https://verteilen.github.io/wiki/",
   "author": "Elly",
-  "repository": "https://github.com/Verteilen/Verteilen-Core",
-  "description": "The core library help verteilen software to work",
-  "main": "dist/index.ts",
+  "repository": "https://github.com/Verteilen/Verteilen-Node",
+  "description": "The CLI computing node of verteilen software",
+  "main": "dist/index.js",
   "bin": {
-    "verteilen_node": "dist/index.js"
+    "verteilen-node": "dist/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Verteilen/Verteilen-Node/issues"
   },
   "scripts": {
-    "build": "ts-node scripts/build.ts",
     "docker": "sh build.sh",
     "docker:p": "sh build.sh --publish",
     "publish": "npm publish"
@@ -30,8 +32,5 @@
     "nodejs-file-downloader": "^4.13.0",
     "progress": "^2.0.3",
     "verteilen-core": "^1.0.3"
-  },
-  "bugs": {
-    "url": "https://github.com/Verteilen/Verteilen-Core/issues"
   }
 }
