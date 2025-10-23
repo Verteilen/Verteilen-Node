@@ -12,5 +12,5 @@
     "resolveJsonModule": true,
     "noImplicitAny": false,
   },
-  "exclude": ["static", "dist"]
+  "exclude": ["static", "scripts", "dist"]
 }
